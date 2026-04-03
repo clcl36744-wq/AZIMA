@@ -261,6 +261,45 @@ footer .emergency {
 .main-btn a:visited {
     color: white; /* убирает фиолетовый после клика */
 }
+.wrapper a {
+  display: block;
+  width: 200px;
+  height: 40px;
+  line-height: 40px;
+  font-size: 20px;
+  font-family: sans-serif;
+  text-decoration: none;
+  color: #080808;
+  border: 2px solid #333;
+  letter-spacing: 2px;
+  text-align: center;
+  position: relative;
+  transition: all .35s;
+}
+
+.wrapper a span {
+  position: relative;
+  z-index: 2;
+}
+
+.wrapper a:after {
+  position: absolute;
+  content: "";
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 100%;
+  background: #29d916;
+  transition: all .35s;
+}
+
+.wrapper a:hover {
+  color: #f5eded;
+}
+
+.wrapper a:hover:after {
+  width: 100%;
+}
     </style>
 </head>
 
@@ -271,8 +310,8 @@ footer .emergency {
     <nav>
         <a href="#services">Услуги</a>
         <a href="#doctors">Врачи</a>
-        <a href="#appointment">Запись</a>
-        <a href="#contacts">Контакты</a>
+        <a href="#appoint">Запись</a>
+        <a href="#footer">Контакты</a>
     </nav>
 </header>
 
@@ -381,20 +420,19 @@ footer .emergency {
         </section> -->
 
     </div>
-<section id="appointment">
+<section id="appoint">
     
 
-    <div class="appointment-box">
-       
-        <button class="main-btn"> <a href="apointment.html">Записаться</a></button>
-    </div>
+  <div class="wrapper" >
+  <a href="#"><span>Записаться</span></a>
+</div>
 </section>
         
 
     
 
 </div>
-<footer class="footer">
+<footer class="footer" id="footer">
   <div class="footer-container">
     <!-- Карта слева -->
     <div class="footer-map">
@@ -425,7 +463,7 @@ footer .emergency {
         <h3>⭐ Отзывы</h3>
         <p>"Отличная клиника!"</p>
       </div>
-      <div class="widget emergency"> <a href="form.html">🚑 103</a>
+      <div class="widget emergency"> <a href="http://127.0.0.1:5500/form.html">🚑 103</a>
             
         </div>
     </div>
