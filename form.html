@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Вызов врача / скорой помощи</title>
+<style>
+    #emergency-call {
+        margin: 40px auto;
+        padding: 25px;
+        background: #ffe5e5;
+        border-radius: 15px;
+        max-width: 500px;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    }
+
+    #emergency-call h2 {
+        text-align: center;
+        color: #d00000;
+        margin-bottom: 20px;
+    }
+
+    #emergency-call form {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    #emergency-call input,
+    #emergency-call select,
+    #emergency-call textarea {
+        width: 100%;
+        max-width: 100%;
+        padding: 8px;
+        border-radius: 8px;
+        border: 1px solid #ccc;
+        box-sizing: border-box;
+    }
+
+    #emergency-call button {
+        width: 70%;
+        margin: 10px auto 0;
+        display: block;
+        padding: 10px;
+        background: #d00000;
+        color: white;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        font-size: 16px;
+    }
+
+    #emergency-call button:hover {
+        background: #9b0000;
+    }
+
+    #emergency-call select {
+        padding: 8px;
+        border-radius: 8px;
+    }
+    body{
+        background-color: rgb(99, 171, 243);
+    }
+</style>
+</head>
+<body>
+
+<div id="emergency-call">
+    <h2>🚑 Вызов врача / скорой помощи</h2>
+    <form>
+        <label>Имя пациента:</label>
+        <input type="text" placeholder="Введите имя" required>
+
+        <label>Возраст:</label>
+        <input type="number" placeholder="Возраст" min="0" max="120" required>
+
+        <label>Пол:</label>
+        <select>
+            <option>Мужской</option>
+            <option>Женский</option>
+        </select>
+
+        <label>Телефон:</label>
+        <input type="tel" placeholder="+996..." required>
+
+        <label>Адрес:</label>
+        <input type="text" placeholder="Введите адрес" required>
+
+        <label>Тип вызова:</label>
+        <select>
+            <option>Врач на дом</option>
+            <option>Скорая помощь</option>
+        </select>
+
+        <label>Симптомы:</label>
+        <input type="text" placeholder="Температура, боль и т.д.">
+
+        <label>Хронические заболевания:</label>
+        <textarea placeholder="Например: диабет, астма..."></textarea>
+
+        <label>Аллергии:</label>
+        <input type="text" placeholder="Лекарства или продукты">
+
+        <label>Принимаемые лекарства:</label>
+        <input type="text" placeholder="Если есть">
+
+        <label>Срочность:</label>
+        <select>
+            <option>Обычная</option>
+            <option>Срочно</option>
+            <option>Критично</option>
+        </select>
+
+        <button type="submit">🚑 Вызвать помощь</button>
+    </form>
+</div>
+
+<script>
+document.querySelector("#emergency-call form").addEventListener("submit", function(e) {
+    e.preventDefault();
+
+    let urgency = document.querySelector("#emergency-call select:last-of-type").value;
+
+    if (urgency === "Критично") {
+        alert("⚠️ Срочный вызов! Рекомендуем сразу позвонить 103");
+    } else {
+        alert("🚑 Вызов отправлен! Ожидайте звонка.");
+    }
+});
+</script>
+
+</body>
+</html>

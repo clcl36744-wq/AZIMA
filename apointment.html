@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #82d0e4;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 50px;
+  }
+
+  form {
+    background: #be9595;
+    padding: 30px 40px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    max-width: 450px;
+    width: 100%;
+  }
+
+  label {
+    font-weight: bold;
+    margin-bottom: 5px;
+    display: block;
+    color: #333;
+  }
+
+  select, input[type="date"], input[type="time"] {
+    width: 100%;
+    padding: 10px 12px;
+    margin: 8px 0 20px 0;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 15px;
+    transition: border-color 0.3s;
+  }
+
+  select:focus, input[type="date"]:focus, input[type="time"]:focus {
+    border-color: #007BFF;
+    outline: none;
+  }
+
+  button {
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 6px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    width: 100%;
+  }
+
+  button:hover {
+    background-color: #0056b3;
+  }
+
+  optgroup {
+    font-weight: bold;
+    color: #555;
+  }
+
+  option {
+    padding: 5px 10px;
+  }
+</style>
+</head>
+<body>
+    <form action="/submit" method="post">
+  <label for="department">Выберите отдел:</label>
+  <select id="department" name="department" required>
+    <optgroup label="Хирургические отделы">
+      <option value="general_surgery">Общая хирургия</option>
+      <option value="orthopedics">Ортопедия и травматология</option>
+      <option value="neurosurgery">Нейрохирургия</option>
+      <option value="thoracic_surgery">Торакальная хирургия</option>
+    </optgroup>
+    <optgroup label="Инфекционные и вирусные отделы">
+      <option value="infectious">Инфекционное отделение</option>
+      <option value="virology_hepatology">Вирусологическое/гепатологическое отделение</option>
+    </optgroup>
+    <optgroup label="Специализированные отделения">
+      <option value="gynecology">Гинекология и акушерство</option>
+      <option value="pediatrics">Педиатрия</option>
+      <option value="oncology">Онкология</option>
+      <option value="endocrinology">Эндокринология</option>
+      <option value="gastroenterology">Гастроэнтерология</option>
+      <option value="nephrology">Нефрология</option>
+      <option value="pulmonology">Пульмонология</option>
+      <option value="dermatology">Дерматология</option>
+      <option value="ophthalmology">Офтальмология</option>
+      <option value="ent">Отоларингология (ЛОР)</option>
+    </optgroup>
+    <optgroup label="Экстренные отделения">
+      <option value="emergency">Скорая помощь / приемное отделение</option>
+      <option value="icu">Реанимация (ICU)</option>
+    </optgroup>
+    <optgroup label="Диагностические и вспомогательные">
+      <option value="imaging">Рентген / МРТ / УЗИ</option>
+      <option value="laboratory">Лаборатория</option>
+      <option value="physiotherapy">Физиотерапия и ЛФК</option>
+    </optgroup>
+  </select>
+
+  <br><br>
+
+  <label for="date">Выберите дату:</label>
+  <input type="date" id="date" name="date" required>
+
+  <br><br>
+
+  <label for="time">Выберите время:</label>
+  <input type="time" id="time" name="time" required>
+
+  <br><br>
+
+  <button type="submit">Записаться</button>
+</form>
+</body>
+</html>

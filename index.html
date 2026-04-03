@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Медицинский центр "Здоровье"</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            background-color: #ffffff;
+            color: #000000;
+        }
+
+        header {
+            background: #0077b6;
+            color: white;
+            padding: 15px;
+        }
+
+        nav a {
+            color: white;
+            margin-right: 15px;
+            text-decoration: none;
+        }
+
+        nav a:focus, button:focus {
+            outline: 3px solid yellow;
+        }
+
+        /* 🔥 СЛАЙДЕР */
+        .slider {
+            position: relative;
+            width: 100%;
+            height: 300px;
+            overflow: hidden;
+        }
+
+        .slide {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            transition: 1s;
+        }
+
+        .slide.active {
+            opacity: 1;
+        }
+
+        .slide img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .slide-text {
+            position: absolute;
+            top: 50%;
+            left: 10%;
+            transform: translateY(-50%);
+            color: white;
+            background: rgba(0,0,0,0.5);
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+        /* Layout */
+        .layout {
+            display: flex;
+            gap: 20px;
+            padding: 20px;
+        }
+
+        .content {
+            flex: 3;
+        }
+
+        .sidebar {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        /* Sidebar */
+        .widget {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(10px);
+            padding: 15px;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            transition: 0.3s;
+        }
+
+        .widget:hover {
+            transform: translateY(-5px);
+        }
+
+        .widget input {
+            width: 100%;
+            padding: 8px;
+            border-radius: 8px;
+            border: 1px solid #ccc;
+        }
+
+        .widget button {
+            width: 100%;
+            margin-top: 10px;
+            background: linear-gradient(45deg, #0077b6, #00b4d8);
+            color: white;
+            border: none;
+            border-radius: 8px;
+        
+        }
+
+        .widget button:hover {
+            background: #023e8a;
+        }
+
+        
+
+        /* Остальное */
+        button {
+            padding: 10px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .high-contrast {
+            background-color: black;
+            color: yellow;
+        }
+
+        .large-text {
+            font-size: 20px;
+        }
+
+        input, select {
+            padding: 8px;
+            width: 100%;
+            max-width: 300px;
+        }
+
+        @media (max-width: 768px) {
+            .layout {
+                flex-direction: column;
+            }
+        }
+        .footer{
+            background-color: #0077b6;
+            color: #ffffff;
+        }
+        .footer .h3{
+            color: #ffffff;
+        }
+        
+.footer {
+    background-color: #0077b6;
+    color: #ffffff;
+    padding: 20px;
+}
+footer .emergency {
+            background: #ff4d4d;
+            color: white;
+            text-align: center;
+            font-weight: bold;
+        }
+
+
+.footer-container {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.footer-map {
+    flex: 2 1 60%;
+}
+
+.footer-info {
+    flex: 1 1 35%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.footer-info .widget {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 15px;
+    border-radius: 10px;
+}
+
+.footer-info h3 {
+    color: #ffffff;
+    margin-bottom: 8px;
+}
+
+.footer-info p {
+    margin: 0;
+    color: #ffffff;
+    font-size: 14px;
+}
+
+@media (max-width: 768px) {
+    .footer-container {
+        flex-direction: column;
+    }
+    .footer-map, .footer-info {
+        flex: 1 1 100%;
+    }
+}
+.emergency a {
+    background-color: #ff0000; /* красный */
+    color: white;
+    padding: 12px 20px;
+    border-radius: 8px;
+    text-decoration: none;
+    display: block;
+    text-align: center;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.emergency a:hover {
+    background-color: #cc0000; /* темнее при наведении */
+}
+.appointment-box {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    max-width: 400px;
+}
+
+.appointment-box input {
+    flex: 1;
+}
+
+.main-btn {
+    background: #237736;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.main-btn:hover {
+    background: #1b80f3;
+}
+.main-btn a {
+    color: white;           /* делаем текст белым */
+    text-decoration: none;  /* убираем подчеркивание */
+    display: block;         /* чтобы занимала всю кнопку */
+}
+
+.main-btn a:visited {
+    color: white; /* убирает фиолетовый после клика */
+}
+    </style>
+</head>
+
+<body>
+
+<header>
+    <h1>Медицинский центр "Здоровье"</h1>
+    <nav>
+        <a href="#services">Услуги</a>
+        <a href="#doctors">Врачи</a>
+        <a href="#appointment">Запись</a>
+        <a href="#contacts">Контакты</a>
+    </nav>
+</header>
+
+<!-- 🔥 СЛАЙДЕР -->
+<div class="slider">
+    <div class="slide active">
+        <img src="/istockphoto-1127069581-612x612.jpg" alt="Врач">
+        <div class="slide-text">
+            <h2>Забота о здоровье</h2>
+            <p>Современная медицина</p>
+        </div>
+    </div>
+
+    <div class="slide">
+        <img src="/istockphoto-1395533815-612x612.jpg" alt="Пациент">
+        <div class="slide-text">
+            <h2>Быстрая запись</h2>
+            <p>Онлайн за 1 минуту</p>
+        </div>
+    </div>
+
+    <div class="slide">
+        <img src="/istockphoto-2099357117-1024x1024.jpg" alt="Клиника">
+        <div class="slide-text">
+            <h2>Лучшие специалисты</h2>
+            <p>Опытные врачи</p>
+        </div>
+    </div>
+</div>
+
+<div class="layout">
+
+    <div class="content">
+
+        <button onclick="toggleContrast()">Контраст</button>
+        <button onclick="toggleTextSize()">Текст</button>
+
+        <section id="services">
+            <h2>Наши врачи</h2>
+            <p>Мы предоставляем широкий спектр медицинских услуг.</p>
+        </section>
+
+        <section id="doctors">
+            <h2> Наши услуги</h2>
+            <!-- <ul>
+                <li>Терапевт</li>
+                <li>Кардиолог</li>
+                <li>Невролог</li>
+            </ul> -->
+            <details>
+  <summary>Хирургические отделы</summary>
+  <ul>
+    <li>Общая хирургия – операции на внутренних органах, например аппендицит, желчный пузырь.</li>
+    <li>Ортопедия и травматология – лечение переломов, вывихов, заболеваний костей и суставов.</li>
+    <li>Нейрохирургия – операции на головном и спинном мозге.</li>
+    <li>Торакальная хирургия – операции на легких, сердце и органах грудной клетки (иногда сердце отдельно).</li>
+  </ul>
+</details>
+
+<details>
+  <summary>Инфекционные и вирусные отделы</summary>
+  <ul>
+    <li>Инфекционное отделение – лечение инфекционных заболеваний (грипп, пневмония, туберкулез).</li>
+    <li>Вирусологическое/гепатологическое отделение – лечение вирусных заболеваний печени и других органов.</li>
+  </ul>
+</details>
+
+<details>
+  <summary>Специализированные отделения</summary>
+  <ul>
+    <li>Гинекология и акушерство – здоровье женщин, беременность, роды.</li>
+    <li>Педиатрия – лечение детей.</li>
+    <li>Онкология – лечение рака и опухолей.</li>
+    <li>Эндокринология – болезни гормональной системы, щитовидной железы, диабет.</li>
+    <li>Гастроэнтерология – болезни желудка, печени, кишечника.</li>
+    <li>Нефрология – болезни почек.</li>
+    <li>Пульмонология – болезни легких.</li>
+    <li>Дерматология – болезни кожи.</li>
+    <li>Офтальмология – болезни глаз.</li>
+    <li>Отоларингология (ЛОР) – ухо, горло, нос.</li>
+  </ul>
+</details>
+
+<details>
+  <summary>Экстренные отделения</summary>
+  <ul>
+    <li>Скорая помощь / приемное отделение – первая помощь при травмах, инсультах, инфарктах.</li>
+    <li>Реанимация (ICU) – интенсивная терапия при угрозе жизни.</li>
+  </ul>
+</details>
+
+<details>
+  <summary>Диагностические и вспомогательные</summary>
+  <ul>
+    <li>Рентген / МРТ / УЗИ – диагностика внутренних органов.</li>
+    <li>Лаборатория – анализы крови, мочи и других жидкостей.</li>
+    <li>Физиотерапия и ЛФК – восстановление после болезней и операций.</li>
+  </ul>
+</details>
+        </section>
+
+        <!-- <section id="appointment">
+            <h2>Запись</h2>
+            <input type="text" placeholder="Имя">
+            <button>Записаться</button>
+        </section> -->
+
+    </div>
+<section id="appointment">
+    
+
+    <div class="appointment-box">
+       
+        <button class="main-btn"> <a href="http://127.0.0.1:5500/apointment.html">Записаться</a></button>
+    </div>
+</section>
+        
+
+    
+
+</div>
+<footer class="footer">
+  <div class="footer-container">
+    <!-- Карта слева -->
+    <div class="footer-map">
+      <h3>📍 Мы на карте (г. Ош)</h3>
+      <iframe 
+        src="https://www.google.com/maps?q=Osh,+Kyrgyzstan&output=embed"
+        width="100%" 
+        height="300" 
+        style="border:0;" 
+        allowfullscreen="" 
+        loading="lazy">
+      </iframe>
+    </div>
+
+    <!-- Контакты, часы и отзывы справа -->
+    <div class="footer-info">
+      <div class="widget">
+        <h3>📞 Контакты</h3>
+        <p>+996 555 123 456<br>Email: info@hospital.ru</p>
+      </div>
+
+      <div class="widget">
+        <h3>🕒 Часы работы</h3>
+        <p>Пн–Пт: 9:00–18:00<br>Сб: 10:00–16:00<br>Вс: выходной</p>
+      </div>
+
+      <div class="widget">
+        <h3>⭐ Отзывы</h3>
+        <p>"Отличная клиника!"</p>
+      </div>
+      <div class="widget emergency"> <a href="http://127.0.0.1:5500/form.html">🚑 103</a>
+            
+        </div>
+    </div>
+  </div>
+
+  <p style="text-align:center; margin-top:15px;">© 2026 Медицинский центр "Здоровье"</p>
+</footer>
+<script>
+    function toggleContrast() {
+        document.body.classList.toggle("high-contrast");
+    }
+
+    function toggleTextSize() {
+        document.body.classList.toggle("large-text");
+    }
+
+    let slides = document.querySelectorAll(".slide");
+    let index = 0;
+
+    setInterval(() => {
+        slides.forEach(s => s.classList.remove("active"));
+        slides[index].classList.add("active");
+        index = (index + 1) % slides.length;
+    }, 3000);
+</script>
+
+</body>
+</html>
