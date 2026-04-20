@@ -269,25 +269,24 @@ footer .emergency {
 .main-btn a:visited {
     color: white; /* убирает фиолетовый после клика */
 }
-.wrapper a {
-  display: block;
-  width: 200px;
-  height: 40px;
-  line-height: 40px;
-  font-size: 20px;
-  font-family: sans-serif;
-  text-decoration: none;
-  color: #080808;
-  border: 2px solid #333;
-  letter-spacing: 2px;
-  text-align: center;
-  position: relative;
-  transition: all .35s;
-}
 
 .wrapper a span {
   position: relative;
   z-index: 2;
+}
+
+.wrapper a {
+  display: inline-block;
+  width: 200px;
+  height: 40px;
+  line-height: 40px;
+  font-size: 20px;
+  text-decoration: none;
+  color: #080808;
+  border: 2px solid #333;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
 }
 
 .wrapper a:after {
@@ -299,10 +298,12 @@ footer .emergency {
   height: 100%;
   background: #29d916;
   transition: all .35s;
+  z-index: 0;
 }
 
-.wrapper a:hover {
-  color: #f5eded;
+.wrapper a span {
+  position: relative;
+  z-index: 1;
 }
 
 .wrapper a:hover:after {
