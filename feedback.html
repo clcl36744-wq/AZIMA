@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Отзывы</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #74ebd5, #9face6);
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            width: 650px;
+            margin: 40px auto;
+            background: white;
+            padding: 25px;
+            border-radius: 15px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+        }
+
+        h2 {
+            text-align: center;
+        }
+
+        input, textarea, select {
+            width: 100%;
+            padding: 12px;
+            margin-top: 10px;
+            border-radius: 8px;
+            border: 1px solid #ccc;
+        }
+
+        textarea {
+            height: 100px;
+            resize: none;
+        }
+
+        button {
+            width: 100%;
+            padding: 12px;
+            margin-top: 15px;
+            border: none;
+            border-radius: 8px;
+            background: #4CAF50;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #45a049;
+        }
+
+        .review {
+            background: #f1f1f1;
+            padding: 12px;
+            margin-top: 10px;
+            border-radius: 10px;
+            position: relative;
+        }
+
+        .actions {
+            margin-top: 8px;
+            display: flex;
+            gap: 10px;
+        }
+
+        .btn {
+            padding: 5px 10px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+        }
+
+        .like {
+            background: #ff4d6d;
+            color: white;
+        }
+
+        .delete {
+            background: #333;
+            color: white;
+        }
+
+        .back {
+            display: block;
+            text-align: center;
+            margin-bottom: 15px;
+            text-decoration: none;
+            color: #555;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+
+<a class="back" href="index.html">← Назад</a>
+
+<h2>Оставить отзыв</h2>
+
+<input id="name" type="text" placeholder="Ваше имя">
+<textarea id="text" placeholder="Ваш отзыв"></textarea>
+
+<select id="rating">
+    <option value="5">⭐⭐⭐⭐⭐ Отлично</option>
+    <option value="4">⭐⭐⭐⭐ Хорошо</option>
+    <option value="3">⭐⭐⭐ Нормально</option>
+    <option value="2">⭐⭐ Плохо</option>
+    <option value="1">⭐ Очень плохо</option>
+</select>
+
+<button onclick="addReview()">Отправить</button>
+
+<hr>
+
+<h2>Отзывы пользователей:</h2>
+
+<div id="reviews"></div>
+
+</div>
+
+<script>
+
+// ⭐ старые отзывы
+let defaultReviews = [
+    {name:"Азамат", text:"Очень удобный сайт 👍", stars:"⭐⭐⭐⭐⭐", likes:0},
+    {name:"Айгуль", text:"Хороший сервис 😊", stars:"⭐⭐⭐⭐", likes:0},
+    {name:"Нурбек", text:"Удобный интерфейс", stars:"⭐⭐⭐⭐", likes:0},
+    {name:"Алина", text:"Отличная работа 👏", stars:"⭐⭐⭐⭐⭐", likes:0},
+    {name:"Руслан", text:"Работает стабильно 👌", stars:"⭐⭐⭐⭐", likes:0},
+    {name:"Нурбол", text:"Всё супер 👍", stars:"⭐⭐⭐⭐⭐", likes:0}
+];
+
+// загрузка
+let saved = localStorage.getItem("reviews");
+let reviews = saved ? JSON.parse(saved) : defaultReviews;
+
+// показать отзывы
+function showReviews() {
+    let box = document.getElementById("reviews");
+    box.innerHTML = "";
+
+    reviews.slice().reverse().forEach((r, index) => {
+
+        let div = document.createElement("div");
+        div.className = "review";
+
+        div.innerHTML = `
+            <strong>${r.name} (${r.stars}):</strong><br>
+            ${r.text}<br>
+            ❤️ Лайки: ${r.likes || 0}
+
+            <div class="actions">
+                <button class="btn like" onclick="likeReview(${index})">❤️ Лайк</button>
+                <button class="btn delete" onclick="deleteReview(${index})">🗑 Удалить</button>
+            </div>
+        `;
+
+        box.appendChild(div);
+    });
+}
+
+// добавить отзыв
+function addReview() {
+    let name = document.getElementById("name").value;
+    let text = document.getElementById("text").value;
+    let rating = document.getElementById("rating").value;
+
+    if (!name || !text) {
+        alert("Заполни все поля!");
+        return;
+    }
+
+    reviews.push({
+        name: name,
+        text: text,
+        stars: "⭐".repeat(rating),
+        likes: 0
+    });
+
+    localStorage.setItem("reviews", JSON.stringify(reviews));
+
+    document.getElementById("name").value = "";
+    document.getElementById("text").value = "";
+
+    showReviews();
+}
+
+// лайк
+function likeReview(i) {
+    reviews[i].likes = (reviews[i].likes || 0) + 1;
+    localStorage.setItem("reviews", JSON.stringify(reviews));
+    showReviews();
+}
+
+// удалить
+function deleteReview(i) {
+    reviews.splice(i, 1);
+    localStorage.setItem("reviews", JSON.stringify(reviews));
+    showReviews();
+}
+
+// старт
+showReviews();
+
+</script>
+
+</body>
+</html>
