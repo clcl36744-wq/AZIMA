@@ -4,25 +4,31 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Медицинский центр "Здоровье"</title>
-
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <style>
         body {
             font-family: Arial, sans-serif;
             line-height: 1.6;
-            background-color: #ffffff;
+            /* background-color: #ffffff; */
             color: #000000;
+             background: url('https://www.transparenttextures.com/patterns/cubes.png'),
+              linear-gradient(360deg, #4d4e4f, #d9e3e3); 
+              margin: 0;
         }
 
         header {
             background: #0077b6;
             color: white;
             padding: 15px;
+            background: url('https://www.transparenttextures.com/patterns/cubes.png'),
+              linear-gradient(360deg, #0077b6); 
         }
 
         nav a {
             color: white;
             margin-right: 15px;
             text-decoration: none;
+            
         }
 
         nav a:focus, button:focus {
@@ -89,7 +95,7 @@
             background: rgba(255, 255, 255, 0.8);
             backdrop-filter: blur(10px);
             padding: 15px;
-            border-radius: 15px;
+            border-radius: 1500px;
             box-shadow: 0 4px 15px rgba(0,0,0,0.1);
             transition: 0.3s;
         }
@@ -102,7 +108,7 @@
             width: 100%;
             padding: 8px;
             border-radius: 8px;
-            border: 1px solid #ccc;
+            border: 50px solid #ccc;
         }
 
         .widget button {
@@ -157,9 +163,11 @@
         }
         
 .footer {
-    background-color: #0077b6;
+    /* background-color: #0077b6; */
     color: #ffffff;
     padding: 20px;
+        background: url('https://www.transparenttextures.com/patterns/cubes.png'),
+              linear-gradient(360deg, #0077b6); 
 }
 footer .emergency {
             background: #ff4d4d;
@@ -305,6 +313,35 @@ footer .emergency {
 .large-text h2 {
     font-size: 70px;
 }
+.logo{
+    display: flex;
+    gap: 75px;
+  margin-top: 50px;
+  margin-left: 110px;
+   
+}
+i {
+  font-size: 55px;
+}
+.fa-square-instagram:hover {
+  color: #E4405F;
+}
+
+.fa-square-x-twitter:hover {
+  color: #000000;
+}
+
+.fa-square-facebook:hover {
+  color: #1877F2;
+}
+
+.fa-square-whatsapp:hover {
+  color: #25D366;
+}
+.widget a {
+    color: white;        /* или любой цвет */
+    text-decoration: none; /* убирает подчёркивание */
+}
     </style>
 </head>
 
@@ -429,7 +466,7 @@ footer .emergency {
     
 
   <div class="wrapper" >
-  <a href="apointment.html"><span>Записаться</span></a>
+  <a href="http://127.0.0.1:5500/apointment.html"><span>Записаться</span></a>
 </div>
 </section>
         
@@ -450,7 +487,14 @@ footer .emergency {
         allowfullscreen="" 
         loading="lazy">
       </iframe>
+      <div class="logo">
+    <i class="fa-brands fa-square-instagram" ></i>
+    <i class="fa-brands fa-square-x-twitter"></i>
+    <i class="fa-brands fa-square-facebook"></i>
+    <i class="fa-brands fa-square-whatsapp"></i>
     </div>
+    </div>
+  
 
     <!-- Контакты, часы и отзывы справа -->
     <div class="footer-info">
@@ -465,7 +509,7 @@ footer .emergency {
       </div>
 
       <div class="widget">
-        <h3>⭐ Отзывы</h3>
+        <h3> <a href="http://127.0.0.1:5500/feedback.html">⭐ Отзывы</a></h3>
         <p>"Отличная клиника!"</p>
       </div>
       <div class="widget emergency"> <a href="http://127.0.0.1:5500/form.html">🚑 103</a>
@@ -473,7 +517,7 @@ footer .emergency {
         </div>
     </div>
   </div>
-
+  
   <p style="text-align:center; margin-top:15px;">© 2026 Медицинский центр "Здоровье"</p>
 </footer>
 <script>
