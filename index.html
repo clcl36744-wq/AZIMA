@@ -351,6 +351,33 @@ i {
   color: white;
   border-top: 1px solid #ddd;
 }
+          h1 {
+      margin-left: 200px;
+      margin-bottom: 30px;
+    }
+
+    details {
+      background: white;
+      padding: 15px;
+      margin-bottom: 15px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      width: 70%;
+    }
+
+    summary {
+      font-size: 18px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .doctor {
+      margin-top: 10px;
+      padding: 10px;
+      border-left: 4px solid #4CAF50;
+      background: #fafafa;
+      border-radius: 5px;
+    }
     </style>
 </head>
 
@@ -402,16 +429,85 @@ i {
 
         <section id="services">
             <h2>Наши врачи</h2>
-            <p>Мы предоставляем широкий спектр медицинских услуг.</p>
+            <details>
+  <summary>🔬 Хирургические отделы</summary>
+
+  <div class="doctor">
+    👨‍⚕️ Иванов И.И. — Хирург<br>
+    Стаж: 12 лет
+  </div>
+
+  <div class="doctor">
+    👩‍⚕️ Петрова А.А. — Травматолог<br>
+    Стаж: 9 лет
+  </div>
+</details>
+
+<!-- Инфекционные -->
+<details>
+  <summary>🦠 Инфекционные и вирусные отделы</summary>
+
+  <div class="doctor">
+    👨‍⚕️ Садыков Б.Б. — Инфекционист<br>
+    Стаж: 10 лет
+  </div>
+
+  <div class="doctor">
+    👩‍⚕️ Ким Н.Н. — Вирусолог<br>
+    Стаж: 7 лет
+  </div>
+</details>
+
+<!-- Специализированные -->
+<details>
+  <summary>🏥 Специализированные отделения</summary>
+
+  <div class="doctor">
+    👩‍⚕️ Осмонова Ж.Ж. — Гинеколог<br>
+    Стаж: 11 лет
+  </div>
+
+  <div class="doctor">
+    👨‍⚕️ Абдуллаев А.А. — Педиатр<br>
+    Стаж: 8 лет
+  </div>
+</details>
+
+<!-- Экстренные -->
+<details>
+  <summary>🚑 Экстренные отделения</summary>
+
+  <div class="doctor">
+    👨‍⚕️ Токтогулов К.К. — Врач скорой помощи<br>
+    Стаж: 13 лет
+  </div>
+
+  <div class="doctor">
+    👩‍⚕️ Жумабекова Л.Л. — Реаниматолог<br>
+    Стаж: 10 лет
+  </div>
+</details>
+
+<!-- Диагностика -->
+<details>
+  <summary>🧪 Диагностические и вспомогательные</summary>
+
+  <div class="doctor">
+    👨‍⚕️ Алиев М.М. — Рентгенолог<br>
+    Стаж: 9 лет
+  </div>
+
+  <div class="doctor">
+    👩‍⚕️ Сыдыкова Н.Н. — Лаборант<br>
+    Стаж: 6 лет
+  </div>
+</details>
+            
         </section>
 
         <section id="doctors">
             <h2> Наши услуги</h2>
-            <!-- <ul>
-                <li>Терапевт</li>
-                <li>Кардиолог</li>
-                <li>Невролог</li>
-            </ul> -->
+            <p>Мы предоставляем широкий спектр медицинских услуг.</p>
             <details>
   <summary>Хирургические отделы</summary>
   <ul>
