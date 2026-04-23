@@ -466,7 +466,7 @@ margin-top: 30px;
         <button onclick="toggleTextSize()">Текст</button>
 
         <section id="services">
-            <h2>Наши врачи</h2>
+            <h2 id="services-title">Наши врачи</h2>
             <details>
   <summary>🔬 Хирургические отделы</summary>
 
@@ -544,7 +544,7 @@ margin-top: 30px;
         </section>
 
         <section id="doctors">
-            <h2> Наши услуги</h2>
+           <h2 id="doctors-title">Наши услуги</h2>
             <p>Мы предоставляем широкий спектр медицинских услуг.</p>
             <details>
   <summary>Хирургические отделы</summary>
@@ -737,6 +737,8 @@ const translations = {
 
     slideTitle3: "Лучшие специалисты",
     slideText3: "Опытные врачи"
+      servicesTitle: 'Наши врачи',
+    doctorsTitle: 'Наши услуги'
   },
 
   en: {
@@ -754,6 +756,8 @@ const translations = {
 
     slideTitle3: "Best specialists",
     slideText3: "Experienced doctors"
+      servicesTitle: 'Our Doctors',
+    doctorsTitle: 'Our Services'
   }
 };
 
@@ -774,6 +778,9 @@ function changeLanguage(lang) {
 
   document.getElementById("slide-title-3").innerText = translations[lang].slideTitle3;
   document.getElementById("slide-text-3").innerText = translations[lang].slideText3;
+     document.getElementById("services-title").innerText = translations[lang].servicesTitle;
+
+  document.getElementById("doctors-title").innerText = translations[lang].doctorsTitle;
 
 }
     </script>
