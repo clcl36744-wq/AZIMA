@@ -462,8 +462,8 @@ margin-top: 30px;
 
     <div class="content">
 
-        <button onclick="toggleContrast()">Контраст</button>
-        <button onclick="toggleTextSize()">Текст</button>
+    <button id="btn-contrast" onclick="toggleContrast()">Контраст</button>
+<button id="btn-text" onclick="toggleTextSize()">Текст</button>
 
         <section id="services">
             <h2 id="services-title">Наши врачи</h2>
@@ -739,7 +739,9 @@ const translations = {
     slideText3: "Опытные врачи",
 
     servicesTitle: 'Наши врачи',
-    doctorsTitle: 'Наши услуги'
+    doctorsTitle: 'Наши услуги',
+      btnContrast: "Контраст",
+  btnText: "Текст"
   },
 
   en: {
@@ -759,7 +761,9 @@ const translations = {
     slideText3: "Experienced doctors",
 
     servicesTitle: 'Our Doctors',
-    doctorsTitle: 'Our Services'
+    doctorsTitle: 'Our Services',
+    btnContrast: "Contrast",
+    btnText: "Text"
   }
 };
 
@@ -783,6 +787,8 @@ function changeLanguage(lang) {
 
   document.getElementById("services-title").innerText = translations[lang].servicesTitle;
   document.getElementById("doctors-title").innerText = translations[lang].doctorsTitle;
+  document.getElementById("btn-contrast").innerText = translations[lang].btnContrast;
+  document.getElementById("btn-text").innerText = translations[lang].btnText;
 }
     </script>
 </body>
