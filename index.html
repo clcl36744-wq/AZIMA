@@ -468,7 +468,7 @@ margin-top: 30px;
         <section id="services">
             <h2 id="services-title">Наши врачи</h2>
             <details>
-  <summary>🔬 Хирургические отделы</summary>
+<summary id="sum-surgery">🔬 Хирургические отделы</summary>
 
   <div class="doctor">
     👨‍⚕️ Иванов И.И. — Хирург<br>
@@ -483,7 +483,7 @@ margin-top: 30px;
 
 <!-- Инфекционные -->
 <details>
-  <summary>🦠 Инфекционные и вирусные отделы</summary>
+  <summary id="sum-infect">🦠 Инфекционные и вирусные отделы</summary>
 
   <div class="doctor">
     👨‍⚕️ Садыков Б.Б. — Инфекционист<br>
@@ -498,7 +498,7 @@ margin-top: 30px;
 
 <!-- Специализированные -->
 <details>
-  <summary>🏥 Специализированные отделения</summary>
+  <summary id="sum-spec">🏥 Специализированные отделения</summary>
 
   <div class="doctor">
     👩‍⚕️ Осмонова Ж.Ж. — Гинеколог<br>
@@ -513,7 +513,7 @@ margin-top: 30px;
 
 <!-- Экстренные -->
 <details>
-  <summary>🚑 Экстренные отделения</summary>
+ <summary id="sum-emergency">🚑 Экстренные отделения</summary>
 
   <div class="doctor">
     👨‍⚕️ Токтогулов К.К. — Врач скорой помощи<br>
@@ -528,7 +528,7 @@ margin-top: 30px;
 
 <!-- Диагностика -->
 <details>
-  <summary>🧪 Диагностические и вспомогательные</summary>
+<summary id="sum-diag">🧪 Диагностические и вспомогательные</summary>
 
   <div class="doctor">
     👨‍⚕️ Алиев М.М. — Рентгенолог<br>
@@ -741,7 +741,12 @@ const translations = {
     servicesTitle: 'Наши врачи',
     doctorsTitle: 'Наши услуги',
       btnContrast: "Контраст",
-  btnText: "Текст"
+  btnText: "Текст",
+       summarySurgery: "🔬 Хирургические отделы",
+  summaryInfect: "🦠 Инфекционные и вирусные отделы",
+  summarySpec: "🏥 Специализированные отделения",
+  summaryEmergency: "🚑 Экстренные отделения",
+  summaryDiag: "🧪 Диагностические и вспомогательные"
   },
 
   en: {
@@ -764,6 +769,11 @@ const translations = {
     doctorsTitle: 'Our Services',
     btnContrast: "Contrast",
     btnText: "Text"
+        summarySurgery: "🔬 Surgical departments",
+  summaryInfect: "🦠 Infectious and viral departments",
+  summarySpec: "🏥 Specialized departments",
+  summaryEmergency: "🚑 Emergency departments",
+  summaryDiag: "🧪 Diagnostic and support departments"
   }
 };
 
@@ -789,6 +799,11 @@ function changeLanguage(lang) {
   document.getElementById("doctors-title").innerText = translations[lang].doctorsTitle;
   document.getElementById("btn-contrast").innerText = translations[lang].btnContrast;
   document.getElementById("btn-text").innerText = translations[lang].btnText;
+    document.getElementById("sum-surgery").innerText = translations[lang].summarySurgery;
+document.getElementById("sum-infect").innerText = translations[lang].summaryInfect;
+document.getElementById("sum-spec").innerText = translations[lang].summarySpec;
+document.getElementById("sum-emergency").innerText = translations[lang].summaryEmergency;
+document.getElementById("sum-diag").innerText = translations[lang].summaryDiag;
 }
     </script>
 </body>
