@@ -433,6 +433,42 @@ margin-top: 30px;
     display: flex;
     gap: 10px;
 }
+        .logo-title {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo-img {
+    width: 45px;
+    height: 45px;
+    object-fit: contain;
+}
+.header-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* ЛОГО + ТЕКСТ В ОДНУ ЛИНИЮ */
+.logo-title {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* ЛОГО */
+.logo-img {
+    width: 110px;
+    height: 110px;
+    object-fit: contain;
+}
+
+/* УБРАТЬ СМЕЩЕНИЕ H1 */
+.logo-title h1 {
+    margin: 0;
+    font-size: 28px;
+}
     </style>
 </head>
 
@@ -440,7 +476,10 @@ margin-top: 30px;
 
 <header>
   <div class="header-top">
+   <div class="logo-title">
+    <img src="logooo.png" alt="Логотип" class="logo-img">
     <h1 id="title">Медицинский центр "Здоровье"</h1>
+  </div>
 
     <div class="lang-buttons">
       <button onclick="changeLanguage('ru')">
