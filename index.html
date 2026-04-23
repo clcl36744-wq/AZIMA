@@ -687,7 +687,7 @@ margin-top: 30px;
   © 2026 💻 Разработано студенткой группы ИСТз-1-21 Абдыназарова А.
 </footer>
 </footer>
-<script>
+    <script>
 function toggleContrast() {
     document.body.classList.toggle("high-contrast");
 }
@@ -706,35 +706,6 @@ setInterval(() => {
     index = (index + 1) % slides.length;
 }, 3000);
 
-
-/* ВТОРОЙ СЛАЙДЕР (clinic-slide) */
-let clinicSlides = document.querySelectorAll(".clinic-slide");
-let i = 0;
-
-setInterval(() => {
-    clinicSlides.forEach(s => s.classList.remove("active"));
-    clinicSlides[i].classList.add("active");
-    i = (i + 1) % clinicSlides.length;
-}, 2000);
-    function toggleContrast() {
-    document.body.classList.toggle("high-contrast");
-}
-
-function toggleTextSize() {
-    document.body.classList.toggle("large-text");
-}
-
-/* ПЕРВЫЙ СЛАЙДЕР */
-let slides = document.querySelectorAll(".slide");
-let index = 0;
-
-setInterval(() => {
-    slides.forEach(s => s.classList.remove("active"));
-    slides[index].classList.add("active");
-    index = (index + 1) % slides.length;
-}, 3000);
-
-
 /* ВТОРОЙ СЛАЙДЕР */
 let clinicSlides = document.querySelectorAll(".clinic-slide");
 let i = 0;
@@ -745,11 +716,7 @@ setInterval(() => {
     i = (i + 1) % clinicSlides.length;
 }, 2000);
 
-
-//////////////////////
-// 🔥 ДОБАВЬ ВОТ ЭТО
-//////////////////////
-
+/* ПЕРЕВОД */
 const translations = {
   ru: {
     title: 'Медицинский центр "Здоровье"',
@@ -762,7 +729,6 @@ const translations = {
 function changeLanguage(lang) {
   document.getElementById("title").innerText = translations[lang].title;
 }
-</script>
-
+    </script>
 </body>
 </html>
