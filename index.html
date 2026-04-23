@@ -431,29 +431,31 @@ margin-top: 30px;
 
 <!-- 🔥 СЛАЙДЕР -->
 <div class="slider">
+
     <div class="slide active">
         <img src="istockphoto-1127069581-612x612.jpg" alt="Врач">
         <div class="slide-text">
-            <h2>Забота о здоровье</h2>
-            <p>Современная медицина</p>
+            <h2 id="slide-title-1">Забота о здоровье</h2>
+            <p id="slide-text-1">Современная медицина</p>
         </div>
     </div>
 
     <div class="slide">
         <img src="istockphoto-1395533815-612x612.jpg" alt="Пациент">
         <div class="slide-text">
-            <h2>Быстрая запись</h2>
-            <p>Онлайн за 1 минуту</p>
+            <h2 id="slide-title-2">Быстрая запись</h2>
+            <p id="slide-text-2">Онлайн за 1 минуту</p>
         </div>
     </div>
 
     <div class="slide">
         <img src="istockphoto-2099357117-1024x1024.jpg" alt="Клиника">
         <div class="slide-text">
-            <h2>Лучшие специалисты</h2>
-            <p>Опытные врачи</p>
+            <h2 id="slide-title-3">Лучшие специалисты</h2>
+            <p id="slide-text-3">Опытные врачи</p>
         </div>
     </div>
+
 </div>
 
 <div class="layout">
@@ -730,6 +732,14 @@ const translations = {
     slideText: 'Современная медицина',
     servicesTitle: 'Наши врачи',
     servicesSubtitle: 'Наши услуги'
+       slideTitle1: "Забота о здоровье",
+    slideText1: "Современная медицина",
+
+    slideTitle2: "Быстрая запись",
+    slideText2: "Онлайн за 1 минуту",
+
+    slideTitle3: "Лучшие специалисты",
+    slideText3: "Опытные врачи"
   },
 
   en: {
@@ -742,21 +752,34 @@ const translations = {
     slideText: 'Modern medicine',
     servicesTitle: 'Our Doctors',
     servicesSubtitle: 'Our Services'
+      
+    slideTitle1: "Healthcare you can trust",
+    slideText1: "Modern medicine",
+
+    slideTitle2: "Fast appointment",
+    slideText2: "Online in 1 minute",
+
+    slideTitle3: "Best specialists",
+    slideText3: "Experienced doctors"
+      
   }
 };
 
 function changeLanguage(lang) {
+ function changeLanguage(lang) {
+
   document.getElementById("title").innerText = translations[lang].title;
-      document.getElementById("nav-services").innerText = translations[lang].navServices;
-  document.getElementById("nav-doctors").innerText = translations[lang].navDoctors;
-  document.getElementById("nav-appoint").innerText = translations[lang].navAppoint;
-  document.getElementById("nav-contacts").innerText = translations[lang].navContacts;
 
-  document.getElementById("slide-title").innerText = translations[lang].slideTitle;
-  document.getElementById("slide-text").innerText = translations[lang].slideText;
+  document.getElementById("slide-title-1").innerText = translations[lang].slideTitle1;
+  document.getElementById("slide-text-1").innerText = translations[lang].slideText1;
 
-  document.getElementById("services-title").innerText = translations[lang].servicesTitle;
-  document.getElementById("services-subtitle").innerText = translations[lang].servicesSubtitle;
+  document.getElementById("slide-title-2").innerText = translations[lang].slideTitle2;
+  document.getElementById("slide-text-2").innerText = translations[lang].slideText2;
+
+  document.getElementById("slide-title-3").innerText = translations[lang].slideTitle3;
+  document.getElementById("slide-text-3").innerText = translations[lang].slideText3;
+
+}
 }
     </script>
 </body>
