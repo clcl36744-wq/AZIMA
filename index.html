@@ -468,7 +468,7 @@ margin-top: 30px;
         <section id="services">
             <h2 id="services-title">Наши врачи</h2>
             <details>
-<summary id="sum-surgery">🔬 Хирургические отделы</summary>
+
 
  <summary id="sum-surgery">🔬 Хирургические отделы</summary>
 
@@ -487,60 +487,60 @@ margin-top: 30px;
 <details>
   <summary id="sum-infect">🦠 Инфекционные и вирусные отделы</summary>
 
-  <div class="doctor">
-    👨‍⚕️ Садыков Б.Б. — Инфекционист<br>
-    Стаж: 10 лет
-  </div>
+ <div class="doctor" id="doc3">
+  👨‍⚕️ Садыков Б.Б. — Инфекционист<br>
+  <span id="exp3">Стаж: 10 лет</span>
+</div>
 
-  <div class="doctor">
-    👩‍⚕️ Ким Н.Н. — Вирусолог<br>
-    Стаж: 7 лет
-  </div>
+<div class="doctor" id="doc4">
+  👩‍⚕️ Ким Н.Н. — Вирусолог<br>
+  <span id="exp4">Стаж: 7 лет</span>
+</div>
 </details>
 
 <!-- Специализированные -->
 <details>
   <summary id="sum-spec">🏥 Специализированные отделения</summary>
 
-  <div class="doctor">
-    👩‍⚕️ Осмонова Ж.Ж. — Гинеколог<br>
-    Стаж: 11 лет
-  </div>
+ <div class="doctor" id="doc5">
+  👩‍⚕️ Осмонова Ж.Ж. — Гинеколог<br>
+  <span id="exp5">Стаж: 11 лет</span>
+</div>
 
-  <div class="doctor">
-    👨‍⚕️ Абдуллаев А.А. — Педиатр<br>
-    Стаж: 8 лет
-  </div>
+<div class="doctor" id="doc6">
+  👨‍⚕️ Абдуллаев А.А. — Педиатр<br>
+  <span id="exp6">Стаж: 8 лет</span>
+</div>
 </details>
 
 <!-- Экстренные -->
 <details>
  <summary id="sum-emergency">🚑 Экстренные отделения</summary>
 
-  <div class="doctor">
-    👨‍⚕️ Токтогулов К.К. — Врач скорой помощи<br>
-    Стаж: 13 лет
-  </div>
+<div class="doctor" id="doc7">
+  👨‍⚕️ Токтогулов К.К. — Врач скорой помощи<br>
+  <span id="exp7">Стаж: 13 лет</span>
+</div>
 
-  <div class="doctor">
-    👩‍⚕️ Жумабекова Л.Л. — Реаниматолог<br>
-    Стаж: 10 лет
-  </div>
+<div class="doctor" id="doc8">
+  👩‍⚕️ Жумабекова Л.Л. — Реаниматолог<br>
+  <span id="exp8">Стаж: 10 лет</span>
+</div>
 </details>
 
 <!-- Диагностика -->
 <details>
 <summary id="sum-diag">🧪 Диагностические и вспомогательные</summary>
 
-  <div class="doctor">
-    👨‍⚕️ Алиев М.М. — Рентгенолог<br>
-    Стаж: 9 лет
-  </div>
+<div class="doctor" id="doc9">
+  👨‍⚕️ Алиев М.М. — Рентгенолог<br>
+  <span id="exp9">Стаж: 9 лет</span>
+</div>
 
-  <div class="doctor">
-    👩‍⚕️ Сыдыкова Н.Н. — Лаборант<br>
-    Стаж: 6 лет
-  </div>
+<div class="doctor" id="doc10">
+  👩‍⚕️ Сыдыкова Н.Н. — Лаборант<br>
+  <span id="exp10">Стаж: 6 лет</span>
+</div>
 </details>
             
         </section>
@@ -753,7 +753,13 @@ const translations = {
     summaryDiag: "🧪 Диагностические и вспомогательные",
       doc1_name: "👨‍⚕️ Иванов И.И. — Хирург",
 doc2_name: "👩‍⚕️ Петрова А.А. — Травматолог",
-exp_text: "Стаж:"
+exp_text: "Стаж:",
+      doc3_name: "👨‍⚕️ Садыков Б.Б. — Инфекционист",
+      doc9_name: "👨‍⚕️ Алиев М.М. — Рентгенолог",
+doc10_name: "👩‍⚕️ Сыдыкова Н.Н. — Лаборант",
+doc7_name: "👨‍⚕️ Токтогулов К.К. — Врач скорой помощи",
+doc8_name: "👩‍⚕️ Жумабекова Л.Л. — Реаниматолог",
+doc4_name: "👩‍⚕️ Ким Н.Н. — Вирусолог"
   },
 
   en: {
@@ -785,6 +791,12 @@ exp_text: "Стаж:"
     summaryDiag: "🧪 Diagnostic and support departments",
       doc1_name: "👨‍⚕️ Ivanov I.I. — Surgeon",
 doc2_name: "👩‍⚕️ Petrova A.A. — Traumatologist",
+      doc3_name: "👨‍⚕️ Sadykov B.B. — Infectious disease specialist",
+doc4_name: "👩‍⚕️ Kim N.N. — Virologist",
+      doc9_name: "👨‍⚕️ Aliev M.M. — Radiologist",
+doc10_name: "👩‍⚕️ Sydykova N.N. — Laboratory assistant",
+doc7_name: "👨‍⚕️ Toktogulov K.K. — Emergency doctor",
+doc8_name: "👩‍⚕️ Zhumabekova L.L. — ICU doctor",
 exp_text: "Experience:"
   }
 };
@@ -821,6 +833,22 @@ document.getElementById("sum-diag").innerText = translations[lang].summaryDiag;
 
 document.getElementById("doc2").innerHTML =
   translations[lang].doc2_name + "<br><span>" + translations[lang].exp_text + " 9 years</span>";
+    document.getElementById("doc3").innerHTML =
+  translations[lang].doc3_name + "<br><span>" + translations[lang].exp_text + " 10 years</span>";
+
+document.getElementById("doc4").innerHTML =
+  translations[lang].doc4_name + "<br><span>" + translations[lang].exp_text + " 7 years</span>";
+    document.getElementById("doc9").innerHTML =
+  translations[lang].doc9_name + "<br><span>" + translations[lang].exp_text + " 9 years</span>";
+
+document.getElementById("doc10").innerHTML =
+  translations[lang].doc10_name + "<br><span>" + translations[lang].exp_text + " 6 years</span>";
+
+document.getElementById("doc7").innerHTML =
+  translations[lang].doc7_name + "<br><span>" + translations[lang].exp_text + " 13 years</span>";
+
+document.getElementById("doc8").innerHTML =
+  translations[lang].doc8_name + "<br><span>" + translations[lang].exp_text + " 10 years</span>";
 }
     </script>
 </body>
