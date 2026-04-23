@@ -736,8 +736,9 @@ const translations = {
     slideText2: "Онлайн за 1 минуту",
 
     slideTitle3: "Лучшие специалисты",
-    slideText3: "Опытные врачи"
-      servicesTitle: 'Наши врачи',
+    slideText3: "Опытные врачи",
+
+    servicesTitle: 'Наши врачи',
     doctorsTitle: 'Наши услуги'
   },
 
@@ -755,8 +756,9 @@ const translations = {
     slideText2: "Online in 1 minute",
 
     slideTitle3: "Best specialists",
-    slideText3: "Experienced doctors"
-      servicesTitle: 'Our Doctors',
+    slideText3: "Experienced doctors",
+
+    servicesTitle: 'Our Doctors',
     doctorsTitle: 'Our Services'
   }
 };
@@ -778,10 +780,9 @@ function changeLanguage(lang) {
 
   document.getElementById("slide-title-3").innerText = translations[lang].slideTitle3;
   document.getElementById("slide-text-3").innerText = translations[lang].slideText3;
-     document.getElementById("services-title").innerText = translations[lang].servicesTitle;
 
+  document.getElementById("services-title").innerText = translations[lang].servicesTitle;
   document.getElementById("doctors-title").innerText = translations[lang].doctorsTitle;
-
 }
     </script>
 </body>
