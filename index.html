@@ -728,11 +728,8 @@ const translations = {
     navDoctors: 'Врачи',
     navAppoint: 'Запись',
     navContacts: 'Контакты',
-    slideTitle: 'Забота о здоровье',
-    slideText: 'Современная медицина',
-    servicesTitle: 'Наши врачи',
-    servicesSubtitle: 'Наши услуги'
-       slideTitle1: "Забота о здоровье",
+
+    slideTitle1: "Забота о здоровье",
     slideText1: "Современная медицина",
 
     slideTitle2: "Быстрая запись",
@@ -748,11 +745,7 @@ const translations = {
     navDoctors: 'Doctors',
     navAppoint: 'Appointment',
     navContacts: 'Contacts',
-    slideTitle: 'Healthcare you can trust',
-    slideText: 'Modern medicine',
-    servicesTitle: 'Our Doctors',
-    servicesSubtitle: 'Our Services'
-      
+
     slideTitle1: "Healthcare you can trust",
     slideText1: "Modern medicine",
 
@@ -761,14 +754,17 @@ const translations = {
 
     slideTitle3: "Best specialists",
     slideText3: "Experienced doctors"
-      
   }
 };
 
 function changeLanguage(lang) {
- function changeLanguage(lang) {
 
   document.getElementById("title").innerText = translations[lang].title;
+
+  document.getElementById("nav-services").innerText = translations[lang].navServices;
+  document.getElementById("nav-doctors").innerText = translations[lang].navDoctors;
+  document.getElementById("nav-appoint").innerText = translations[lang].navAppoint;
+  document.getElementById("nav-contacts").innerText = translations[lang].navContacts;
 
   document.getElementById("slide-title-1").innerText = translations[lang].slideTitle1;
   document.getElementById("slide-text-1").innerText = translations[lang].slideText1;
@@ -779,7 +775,6 @@ function changeLanguage(lang) {
   document.getElementById("slide-title-3").innerText = translations[lang].slideTitle3;
   document.getElementById("slide-text-3").innerText = translations[lang].slideText3;
 
-}
 }
     </script>
 </body>
