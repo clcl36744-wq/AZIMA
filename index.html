@@ -470,15 +470,17 @@ margin-top: 30px;
             <details>
 <summary id="sum-surgery">🔬 Хирургические отделы</summary>
 
-  <div class="doctor">
-    👨‍⚕️ Иванов И.И. — Хирург<br>
-    Стаж: 12 лет
-  </div>
+ <summary id="sum-surgery">🔬 Хирургические отделы</summary>
 
-  <div class="doctor">
-    👩‍⚕️ Петрова А.А. — Травматолог<br>
-    Стаж: 9 лет
-  </div>
+<div class="doctor" id="doc1">
+  👨‍⚕️ Иванов И.И. — Хирург<br>
+  <span id="exp1">Стаж: 12 лет</span>
+</div>
+
+<div class="doctor" id="doc2">
+  👩‍⚕️ Петрова А.А. — Травматолог<br>
+  <span id="exp2">Стаж: 9 лет</span>
+</div>
 </details>
 
 <!-- Инфекционные -->
@@ -748,7 +750,10 @@ const translations = {
     summaryInfect: "🦠 Инфекционные и вирусные отделы",
     summarySpec: "🏥 Специализированные отделения",
     summaryEmergency: "🚑 Экстренные отделения",
-    summaryDiag: "🧪 Диагностические и вспомогательные"
+    summaryDiag: "🧪 Диагностические и вспомогательные",
+      doc1_name: "👨‍⚕️ Иванов И.И. — Хирург",
+doc2_name: "👩‍⚕️ Петрова А.А. — Травматолог",
+exp_text: "Стаж:"
   },
 
   en: {
@@ -777,7 +782,10 @@ const translations = {
     summaryInfect: "🦠 Infectious and viral departments",
     summarySpec: "🏥 Specialized departments",
     summaryEmergency: "🚑 Emergency departments",
-    summaryDiag: "🧪 Diagnostic and support departments"
+    summaryDiag: "🧪 Diagnostic and support departments",
+      doc1_name: "👨‍⚕️ Ivanov I.I. — Surgeon",
+doc2_name: "👩‍⚕️ Petrova A.A. — Traumatologist",
+exp_text: "Experience:"
   }
 };
 
@@ -808,6 +816,11 @@ document.getElementById("sum-infect").innerText = translations[lang].summaryInfe
 document.getElementById("sum-spec").innerText = translations[lang].summarySpec;
 document.getElementById("sum-emergency").innerText = translations[lang].summaryEmergency;
 document.getElementById("sum-diag").innerText = translations[lang].summaryDiag;
+    document.getElementById("doc1").innerHTML =
+  translations[lang].doc1_name + "<br><span>" + translations[lang].exp_text + " 12 years</span>";
+
+document.getElementById("doc2").innerHTML =
+  translations[lang].doc2_name + "<br><span>" + translations[lang].exp_text + " 9 years</span>";
 }
     </script>
 </body>
