@@ -745,6 +745,16 @@ const translations = {
 
 function changeLanguage(lang) {
   document.getElementById("title").innerText = translations[lang].title;
+      document.getElementById("nav-services").innerText = translations[lang].navServices;
+  document.getElementById("nav-doctors").innerText = translations[lang].navDoctors;
+  document.getElementById("nav-appoint").innerText = translations[lang].navAppoint;
+  document.getElementById("nav-contacts").innerText = translations[lang].navContacts;
+
+  document.getElementById("slide-title").innerText = translations[lang].slideTitle;
+  document.getElementById("slide-text").innerText = translations[lang].slideText;
+
+  document.getElementById("services-title").innerText = translations[lang].servicesTitle;
+  document.getElementById("services-subtitle").innerText = translations[lang].servicesSubtitle;
 }
     </script>
 </body>
