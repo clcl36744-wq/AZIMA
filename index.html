@@ -6,13 +6,7 @@
     <title>Медицинский центр "Здоровье"</title>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <style>
-        .logo-img {
-    width: 110px;
-    height: 110px;
-    object-fit: contain;
-
-    animation: spin 5s linear infinite;
-}
+ 
         header {
     position: sticky;
     top: 0;
@@ -171,12 +165,34 @@
                 flex-direction: column;
             }
         }
-        @keyframes spin {
-    from {
+       .logo-img {
+    width: 110px;
+    height: 110px;
+    object-fit: contain;
+
+    animation: swing 3s ease-in-out infinite;
+    transform-origin: center;
+}
+
+@keyframes swing {
+    0% {
         transform: rotate(0deg);
     }
-    to {
-        transform: rotate(360deg);
+
+    25% {
+        transform: rotate(-15deg);
+    }
+
+    50% {
+        transform: rotate(0deg);
+    }
+
+    75% {
+        transform: rotate(15deg);
+    }
+
+    100% {
+        transform: rotate(0deg);
     }
 }
         .footer{
