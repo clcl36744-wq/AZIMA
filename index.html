@@ -10,16 +10,15 @@
         /* кнопка */
 .burger {
     display: none;
-    font-size: 28px;
+    font-size: 30px;
     background: none;
     border: none;
     cursor: pointer;
 }
 
-/* обычное меню (ПК) */
 .nav {
     display: flex;
-    gap: 20px;
+    gap: 15px;
 }
 
 /* 📱 МОБИЛЬНАЯ ВЕРСИЯ */
@@ -31,20 +30,35 @@
 
     .nav {
         display: none;
-        flex-direction: row;   /* 👈 ВАЖНО: в один ряд */
+        flex-direction: row;
         justify-content: center;
+        align-items: center;
         gap: 15px;
-        background: white;
+
         position: absolute;
-        top: 70px;
+        top: 80px;
         left: 0;
         width: 100%;
-        padding: 10px;
-        box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+
+        background: white;
+        padding: 12px;
+
+        z-index: 9999;
     }
 
     .nav.active {
         display: flex;
+    }
+
+    .nav a {
+        color: black;          /* 👈 ВАЖНО: чтобы было видно */
+        text-decoration: none;
+        font-size: 16px;
+        font-weight: 500;
+    }
+
+    .nav a:hover {
+        color: #0077b6;
     }
 }
  /* 📱 ОБЩАЯ МОБИЛЬНАЯ АДАПТАЦИЯ */
