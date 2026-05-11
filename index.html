@@ -502,11 +502,32 @@ margin-top: 30px;
     margin: 0;
     font-size: 28px;
 }
+        .doctor {
+    background: white;
+    padding: 15px;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    transition: 0.3s;
+}
+
+.doctor:hover {
+    transform: scale(1.03);
+}
+        .fade-in {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 1s ease;
+}
+
+.fade-in.show {
+    opacity: 1;
+    transform: translateY(0);
+}
     </style>
 </head>
 
 <body>
-
+<section class="fade-in">
 <header>
   <div class="header-top">
    <div class="logo-title">
@@ -1159,6 +1180,17 @@ document.getElementById("copyright").innerText =
   translations[lang].copyright;
 }
 }
+        const fadeElements = document.querySelectorAll(".fade-in");
+
+window.addEventListener("scroll", () => {
+    fadeElements.forEach(el => {
+        const position = el.getBoundingClientRect().top;
+
+        if(position < window.innerHeight - 100){
+            el.classList.add("show");
+        }
+    });
+});
     </script>
 </body>
 </html>
