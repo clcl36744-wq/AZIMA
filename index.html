@@ -7,6 +7,46 @@
     <title>Медицинский центр "Здоровье"</title>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <style>
+        /* кнопка */
+.burger {
+    display: none;
+    font-size: 28px;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+/* обычное меню (ПК) */
+.nav {
+    display: flex;
+    gap: 20px;
+}
+
+/* 📱 МОБИЛЬНАЯ ВЕРСИЯ */
+@media (max-width: 768px) {
+
+    .burger {
+        display: block;
+    }
+
+    .nav {
+        display: none;
+        flex-direction: row;   /* 👈 ВАЖНО: в один ряд */
+        justify-content: center;
+        gap: 15px;
+        background: white;
+        position: absolute;
+        top: 70px;
+        left: 0;
+        width: 100%;
+        padding: 10px;
+        box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    }
+
+    .nav.active {
+        display: flex;
+    }
+}
  /* 📱 ОБЩАЯ МОБИЛЬНАЯ АДАПТАЦИЯ */
 @media (max-width: 768px) {
 
@@ -638,11 +678,13 @@ margin-top: 30px;
     </div>
   </div>
     <nav>
-     <nav>
-    <a id="nav-services" href="#services">Услуги</a>
-    <a id="nav-doctors" href="#doctors">Врачи</a>
-    <a id="nav-appoint" href="#appoint">Запись</a>
-    <a id="nav-contacts" href="#footer">Контакты</a>
+   <button class="burger" onclick="toggleMenu()">☰</button>
+
+<nav id="nav-menu" class="nav">
+  <a href="#services">Услуги</a>
+  <a href="#doctors">Врачи</a>
+  <a href="#appoint">Запись</a>
+  <a href="#footer">Контакты</a>
 </nav>
     </nav>
 </header>
@@ -1283,6 +1325,9 @@ window.addEventListener("scroll", () => {
         }
     });
 });
+        function toggleMenu() {
+    document.getElementById("nav-menu").classList.toggle("active");
+}
     </script>
 </body>
 </html>
