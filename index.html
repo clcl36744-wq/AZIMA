@@ -683,21 +683,23 @@ margin-top: 30px;
     
 
   <div class="wrapper" >
-  <a href="https://clcl36744-wq.github.io/AZIMA/apointment.html"><span>Записаться</span></a>
+  <a href="https://clcl36744-wq.github.io/AZIMA/apointment.html">
+  <span id="appoint-btn">Записаться</span>
+</a>
 </div>
-<h3>🔔 Новости</h3>
+<h3 id="news-title">🔔 Новости</h3>
   <div class="sidebar-box">
   
-   <p>• 23 апреля — бесплатный приём терапевта</p>
-  <p>• Новое современное оборудование в клинике</p>
-  <p>• Открыт новый кабинет диагностики</p>
-  <p>• Появилась онлайн запись к врачам</p>
-  <p>• Запущен новый сайт клиники</p>
-  <p>• Приглашён новый специалист-хирург</p>
-  <p>• Акция: бесплатная консультация педиатра</p>
-  <p>• Обновлено отделение хирургии</p>
+<p id="news1">• 23 апреля — бесплатный приём терапевта</p>
+<p id="news2">• Новое современное оборудование в клинике</p>
+<p id="news3">• Открыт новый кабинет диагностики</p>
+<p id="news4">• Появилась онлайн запись к врачам</p>
+<p id="news5">• Запущен новый сайт клиники</p>
+<p id="news6">• Приглашён новый специалист-хирург</p>
+<p id="news7">• Акция: бесплатная консультация педиатра</p>
+<p id="news8">• Обновлено отделение хирургии</p>
 </div>
-<h3>📷 Галерея клиники</h3>
+<h3 id="gallery-title">📷 Галерея клиники</h3>
  
 
   <div class="slider">
@@ -831,6 +833,18 @@ exp_text: "Стаж:",
 doc10_name: "👩‍⚕️ Сыдыкова Н.Н. — Лаборант",
 doc7_name: "👨‍⚕️ Токтогулов К.К. — Врач скорой помощи",
 doc8_name: "👩‍⚕️ Жумабекова Л.Л. — Реаниматолог",
+      appointBtn: "Записаться",
+newsTitle: "🔔 Новости",
+galleryTitle: "📷 Галерея клиники",
+
+news1: "• 23 апреля — бесплатный приём терапевта",
+news2: "• Новое современное оборудование в клинике",
+news3: "• Открыт новый кабинет диагностики",
+news4: "• Появилась онлайн запись к врачам",
+news5: "• Запущен новый сайт клиники",
+news6: "• Приглашён новый специалист-хирург",
+news7: "• Акция: бесплатная консультация педиатра",
+news8: "• Обновлено отделение хирургии",
 doc4_name: "👩‍⚕️ Ким Н.Н. — Вирусолог"
   },
 
@@ -869,6 +883,18 @@ doc4_name: "👩‍⚕️ Kim N.N. — Virologist",
 doc10_name: "👩‍⚕️ Sydykova N.N. — Laboratory assistant",
 doc7_name: "👨‍⚕️ Toktogulov K.K. — Emergency doctor",
 doc8_name: "👩‍⚕️ Zhumabekova L.L. — ICU doctor",
+      appointBtn: "Make Appointment",
+newsTitle: "🔔 News",
+galleryTitle: "📷 Clinic Gallery",
+
+news1: "• April 23 — free therapist consultation",
+news2: "• New modern equipment in the clinic",
+news3: "• New diagnostic room opened",
+news4: "• Online doctor appointment launched",
+news5: "• New clinic website launched",
+news6: "• New surgeon specialist invited",
+news7: "• Promotion: free pediatric consultation",
+news8: "• Surgery department updated",
 exp_text: "Experience:"
   }
 };
@@ -921,6 +947,23 @@ document.getElementById("doc7").innerHTML =
 
 document.getElementById("doc8").innerHTML =
   translations[lang].doc8_name + "<br><span>" + translations[lang].exp_text + " 10 years</span>";
+    document.getElementById("appoint-btn").innerText =
+  translations[lang].appointBtn;
+
+document.getElementById("news-title").innerText =
+  translations[lang].newsTitle;
+
+document.getElementById("gallery-title").innerText =
+  translations[lang].galleryTitle;
+
+document.getElementById("news1").innerText = translations[lang].news1;
+document.getElementById("news2").innerText = translations[lang].news2;
+document.getElementById("news3").innerText = translations[lang].news3;
+document.getElementById("news4").innerText = translations[lang].news4;
+document.getElementById("news5").innerText = translations[lang].news5;
+document.getElementById("news6").innerText = translations[lang].news6;
+document.getElementById("news7").innerText = translations[lang].news7;
+document.getElementById("news8").innerText = translations[lang].news8;
 }
     </script>
 </body>
