@@ -721,51 +721,90 @@ margin-top: 30px;
 </div>
 <footer class="footer" id="footer">
   <div class="footer-container">
-    <!-- Карта слева -->
+
+    <!-- Карта -->
     <div class="footer-map">
-      <h3>📍 Мы на карте (г. Ош)</h3>
-      <iframe 
+
+      <h3 id="map-title">📍 Мы на карте (г. Ош)</h3>
+
+      <iframe
         src="https://www.google.com/maps?q=Osh,+Kyrgyzstan&output=embed"
-        width="100%" 
-        height="300" 
-        style="border:0;" 
-        allowfullscreen="" 
+        width="100%"
+        height="300"
+        style="border:0;"
+        allowfullscreen=""
         loading="lazy">
       </iframe>
+
       <div class="logo">
-    <i class="fa-brands fa-square-instagram" ></i>
-    <i class="fa-brands fa-square-x-twitter"></i>
-    <i class="fa-brands fa-square-facebook"></i>
-    <i class="fa-brands fa-square-whatsapp"></i>
-    </div>
-    </div>
-  
+        <i class="fa-brands fa-square-instagram"></i>
+        <i class="fa-brands fa-square-x-twitter"></i>
+        <i class="fa-brands fa-square-facebook"></i>
+        <i class="fa-brands fa-square-whatsapp"></i>
+      </div>
 
-    <!-- Контакты, часы и отзывы справа -->
+    </div>
+
+    <!-- Правая часть -->
     <div class="footer-info">
+
       <div class="widget">
-        <h3> <a href="https://clcl36744-wq.github.io/AZIMA/contact.html">📞 Контакты</h3>
-        <p>+996 555 123 456<br>Email: info@hospital.ru</p>
+        <h3>
+          <a id="contacts-title"
+             href="https://clcl36744-wq.github.io/AZIMA/contact.html">
+             📞 Контакты
+          </a>
+        </h3>
+
+        <p id="contacts-text">
+          +996 555 123 456<br>
+          Email: info@hospital.ru
+        </p>
       </div>
 
       <div class="widget">
-        <h3><a href="https://clcl36744-wq.github.io/AZIMA/schedule.html">🕒 Часы работы</h3>
-        <p>Пн–Пт: 9:00–18:00<br>Сб: 10:00–16:00<br>Вс: выходной</p>
+        <h3>
+          <a id="schedule-title"
+             href="https://clcl36744-wq.github.io/AZIMA/schedule.html">
+             🕒 Часы работы
+          </a>
+        </h3>
+
+        <p id="schedule-text">
+          Пн–Пт: 9:00–18:00<br>
+          Сб: 10:00–16:00<br>
+          Вс: выходной
+        </p>
       </div>
 
       <div class="widget">
-        <h3> <a href="https://clcl36744-wq.github.io/AZIMA/feedback.html">⭐ Отзывы</a></h3>
-        <p>"Отличная клиника!"</p>
+        <h3>
+          <a id="reviews-title"
+             href="https://clcl36744-wq.github.io/AZIMA/feedback.html">
+             ⭐ Отзывы
+          </a>
+        </h3>
+
+        <p id="reviews-text">
+          "Отличная клиника!"
+        </p>
       </div>
-      <div class="widget emergency"> <a href="https://clcl36744-wq.github.io/AZIMA/form.html">🚑 103</a>
-            
-        </div>
+
+      <div class="widget emergency">
+        <a href="https://clcl36744-wq.github.io/AZIMA/form.html">
+          🚑 103
+        </a>
+      </div>
+
     </div>
   </div>
-  
+
   <footer class="footer">
-  © 2026 💻 Разработано студенткой группы ИСТз-1-21 Абдыназарова А.
-</footer>
+    <p id="copyright">
+      © 2026 💻 Разработано студенткой группы ИСТз-1-21 Абдыназарова А.
+    </p>
+  </footer>
+
 </footer>
     <script>
 function toggleContrast() {
@@ -878,6 +917,18 @@ serv18: "Реанимация – интенсивная терапия.",
 serv19: "Рентген / МРТ / УЗИ – диагностика внутренних органов.",
 serv20: "Лаборатория – анализы крови и мочи.",
 serv21: "Физиотерапия и ЛФК – восстановление после операций.",
+      mapTitle: "📍 Мы на карте (г. Ош)",
+
+contactsTitle: "📞 Контакты",
+scheduleTitle: "🕒 Часы работы",
+reviewsTitle: "⭐ Отзывы",
+
+scheduleText: "Пн–Пт: 9:00–18:00\nСб: 10:00–16:00\nВс: выходной",
+
+reviewsText: '"Отличная клиника!"',
+
+copyright:
+"© 2026 💻 Разработано студенткой группы ИСТз-1-21 Абдыназарова А.",
 doc4_name: "👩‍⚕️ Ким Н.Н. — Вирусолог"
   },
 
@@ -961,6 +1012,18 @@ serv18: "ICU – intensive therapy.",
 serv19: "X-ray / MRI / Ultrasound – internal organ diagnostics.",
 serv20: "Laboratory – blood and urine tests.",
 serv21: "Physiotherapy – rehabilitation after surgeries.",
+      mapTitle: "📍 Find us on the map (Osh city)",
+
+contactsTitle: "📞 Contacts",
+scheduleTitle: "🕒 Working hours",
+reviewsTitle: "⭐ Reviews",
+
+scheduleText: "Mon–Fri: 9:00–18:00\nSat: 10:00–16:00\nSun: closed",
+
+reviewsText: '"Excellent clinic!"',
+
+copyright:
+"© 2026 💻 Developed by ISTz-1-21 student Abdynazarova A.",
 exp_text: "Experience:"
   }
 };
@@ -1041,6 +1104,26 @@ document.getElementById("serv-diagn").innerText = translations[lang].servDiagn;
 for(let i = 1; i <= 21; i++) {
   document.getElementById("serv" + i).innerText =
     translations[lang]["serv" + i];
+    document.getElementById("map-title").innerText =
+  translations[lang].mapTitle;
+
+document.getElementById("contacts-title").innerText =
+  translations[lang].contactsTitle;
+
+document.getElementById("schedule-title").innerText =
+  translations[lang].scheduleTitle;
+
+document.getElementById("reviews-title").innerText =
+  translations[lang].reviewsTitle;
+
+document.getElementById("schedule-text").innerHTML =
+  translations[lang].scheduleText.replace(/\n/g, "<br>");
+
+document.getElementById("reviews-text").innerText =
+  translations[lang].reviewsText;
+
+document.getElementById("copyright").innerText =
+  translations[lang].copyright;
 }
 }
     </script>
