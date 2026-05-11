@@ -165,34 +165,26 @@
                 flex-direction: column;
             }
         }
-       .logo-img {
+.logo-img {
     width: 110px;
     height: 110px;
     object-fit: contain;
 
-    animation: swing 3s ease-in-out infinite;
-    transform-origin: center;
+    animation: flip 3s infinite;
+    transform-style: preserve-3d;
 }
 
-@keyframes swing {
+@keyframes flip {
     0% {
-        transform: rotate(0deg);
-    }
-
-    25% {
-        transform: rotate(-15deg);
+        transform: rotateY(0deg);
     }
 
     50% {
-        transform: rotate(0deg);
-    }
-
-    75% {
-        transform: rotate(15deg);
+        transform: rotateY(180deg);
     }
 
     100% {
-        transform: rotate(0deg);
+        transform: rotateY(360deg);
     }
 }
         .footer{
