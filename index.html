@@ -1,12 +1,104 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Медицинский центр "Здоровье"</title>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <style>
- 
+ /* 📱 ОБЩАЯ МОБИЛЬНАЯ АДАПТАЦИЯ */
+@media (max-width: 768px) {
+
+    /* HEADER */
+    .header-top {
+        flex-direction: column;
+        gap: 10px;
+        text-align: center;
+    }
+
+    nav {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        align-items: center;
+    }
+
+    nav a {
+        margin: 0;
+        font-size: 16px;
+    }
+
+    /* ЛОГО */
+    .logo-img {
+        width: 70px;
+        height: 70px;
+    }
+
+    h1 {
+        font-size: 20px;
+        margin: 10px 0;
+    }
+
+    /* СЛАЙДЕР */
+    .slider {
+        height: 200px;
+    }
+
+    .slide-text {
+        font-size: 14px;
+        padding: 10px;
+        left: 5%;
+    }
+
+    /* ЛЕЙАУТ */
+    .layout {
+        flex-direction: column;
+        padding: 10px;
+    }
+
+    /* БОКОВАЯ ПАНЕЛЬ */
+    .sidebar {
+        width: 100%;
+    }
+
+    .sidebar-box {
+        padding: 10px;
+        font-size: 14px;
+    }
+
+    /* ВРАЧИ */
+    details {
+        width: 100%;
+    }
+
+    .doctor {
+        font-size: 14px;
+    }
+
+    /* КНОПКИ */
+    button, .main-btn {
+        width: 100%;
+        font-size: 16px;
+    }
+
+    /* ФУТЕР */
+    .footer-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    iframe {
+        height: 200px;
+    }
+
+    /* УБИРАЕМ СЛИШКОМ БОЛЬШИЕ ОТСТУПЫ */
+    .logo {
+        flex-direction: column;
+        margin-left: 0;
+        gap: 15px;
+    }
+}
         header {
     position: sticky;
     top: 0;
