@@ -1367,18 +1367,13 @@ document.getElementById("copyright").innerText =
 }
         const fadeElements = document.querySelectorAll(".fade-in");
 
-window.addEventListener("scroll", () => {
-    fadeElements.forEach(el => {
-        const position = el.getBoundingClientRect().top;
-
-        if(position < window.innerHeight - 100){
-            el.classList.add("show");
-        }
-    });
+window.addEventListener("load", () => {
+    setTimeout(() => {
+        const splash = document.getElementById("splash");
+        splash.style.opacity = "0";
+        setTimeout(() => splash.style.display = "none", 500);
+    }, 2000);
 });
-        function toggleMenu() {
-    document.getElementById("nav-menu").classList.toggle("active");
-}
     </script>
 </body>
 </html>
