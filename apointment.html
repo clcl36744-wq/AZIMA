@@ -85,15 +85,11 @@
     color: azure;
   }
   /* !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! */
- .wrapper{
-  /* position: fixed; */
-  /* top: 50%; */
-  /* left: 50%; */
-  transform: translate(-50%, -50%);
-  margin-left: 250px;
+ 
+.wrapper {
+  display: flex;
+  justify-content: center;
   margin-top: 20px;
-  color: #fff;
-  font: bold;
 }
 
 a{
@@ -135,6 +131,33 @@ a:hover{
 
 a:hover:after{
   width: 100%;
+}
+    @media (max-width: 768px) {
+
+  body {
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+  }
+
+  h2, h3 {
+    text-align: center;
+    font-size: 18px;
+  }
+
+  form {
+    width: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+  }
+
+  select, input {
+    font-size: 16px;
+  }
+
+  button {
+    font-size: 16px;
+  }
 }
 </style>
 </head>
@@ -197,7 +220,7 @@ a:hover:after{
 </button> -->
 
 <div class="wrapper">
-  <a href="#"><span>Записаться</span></a>
+ <button type="submit">Записаться</button>
 </div>
   
 </div>
