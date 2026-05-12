@@ -15,6 +15,7 @@
 
     animation: flip 2s infinite ease-in-out;
     transform-style: preserve-3d;
+    
    
 }
 
@@ -172,11 +173,7 @@
         gap: 15px;
     }
 }
-        header {
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-
+      header {
     background: url('https://www.transparenttextures.com/patterns/cubes.png'),
     linear-gradient(360deg, #0077b6);
 
@@ -1304,11 +1301,43 @@ function changeLanguage(lang) {
 
   document.getElementById("title").innerText = translations[lang].title;
 
-  document.getElementById("nav-services").innerText = translations[lang].navServices;
-  document.getElementById("nav-doctors").innerText = translations[lang].navDoctors;
-  document.getElementById("nav-appoint").innerText = translations[lang].navAppoint;
-  document.getElementById("nav-contacts").innerText = translations[lang].navContacts;
+  document.getElementById("btn-contrast").innerText = translations[lang].btnContrast;
+  document.getElementById("btn-text").innerText = translations[lang].btnText;
 
+  document.getElementById("services-title").innerText = translations[lang].servicesTitle;
+  document.getElementById("doctors-title").innerText = translations[lang].doctorsTitle;
+
+  document.getElementById("services-desc").innerText = translations[lang].servicesDesc;
+
+  document.getElementById("news-title").innerText = translations[lang].newsTitle;
+  document.getElementById("gallery-title").innerText = translations[lang].galleryTitle;
+for (let i = 1; i <= 8; i++) {
+  const news = document.getElementById("news" + i);
+  if (news && translations[lang]["news" + i]) {
+    news.innerText = translations[lang]["news" + i];
+  }
+}
+
+  // дальше может идти services и другие циклы
+
+  document.getElementById("appoint-btn").innerText = translations[lang].appointBtn;
+
+  document.getElementById("map-title").innerText = translations[lang].mapTitle;
+
+  document.getElementById("contacts-title").innerText = translations[lang].contactsTitle;
+  document.getElementById("schedule-title").innerText = translations[lang].scheduleTitle;
+  document.getElementById("reviews-title").innerText = translations[lang].reviewsTitle;
+
+  document.getElementById("schedule-text").innerHTML =
+    translations[lang].scheduleText.replace(/\n/g, "<br>");
+
+  document.getElementById("reviews-text").innerText =
+    translations[lang].reviewsText;
+
+  document.getElementById("copyright").innerText =
+    translations[lang].copyright;
+
+  // SLIDES
   document.getElementById("slide-title-1").innerText = translations[lang].slideTitle1;
   document.getElementById("slide-text-1").innerText = translations[lang].slideText1;
 
@@ -1318,100 +1347,63 @@ function changeLanguage(lang) {
   document.getElementById("slide-title-3").innerText = translations[lang].slideTitle3;
   document.getElementById("slide-text-3").innerText = translations[lang].slideText3;
 
-  document.getElementById("services-title").innerText = translations[lang].servicesTitle;
-  document.getElementById("doctors-title").innerText = translations[lang].doctorsTitle;
-  document.getElementById("btn-contrast").innerText = translations[lang].btnContrast;
-  document.getElementById("btn-text").innerText = translations[lang].btnText;
-    document.getElementById("sum-surgery").innerText = translations[lang].summarySurgery;
-document.getElementById("sum-infect").innerText = translations[lang].summaryInfect;
-document.getElementById("sum-spec").innerText = translations[lang].summarySpec;
-document.getElementById("sum-emergency").innerText = translations[lang].summaryEmergency;
-document.getElementById("sum-diag").innerText = translations[lang].summaryDiag;
-    document.getElementById("doc1").innerHTML =
-  translations[lang].doc1_name + "<br><span>" + translations[lang].exp_text + " 12 years</span>";
+  // SUMMARY
+  document.getElementById("sum-surgery").innerText = translations[lang].summarySurgery;
+  document.getElementById("sum-infect").innerText = translations[lang].summaryInfect;
+  document.getElementById("sum-spec").innerText = translations[lang].summarySpec;
+  document.getElementById("sum-emergency").innerText = translations[lang].summaryEmergency;
+  document.getElementById("sum-diag").innerText = translations[lang].summaryDiag;
 
-document.getElementById("doc2").innerHTML =
-  translations[lang].doc2_name + "<br><span>" + translations[lang].exp_text + " 9 years</span>";
-    document.getElementById("doc3").innerHTML =
-  translations[lang].doc3_name + "<br><span>" + translations[lang].exp_text + " 10 years</span>";
+  // DOCTORS (фиксированно)
+  document.getElementById("doc1").innerHTML =
+    translations[lang].doc1_name + "<br><span>" + translations[lang].exp_text + " 12 years</span>";
 
-document.getElementById("doc4").innerHTML =
-  translations[lang].doc4_name + "<br><span>" + translations[lang].exp_text + " 7 years</span>";
-    document.getElementById("doc9").innerHTML =
-  translations[lang].doc9_name + "<br><span>" + translations[lang].exp_text + " 9 years</span>";
+  document.getElementById("doc2").innerHTML =
+    translations[lang].doc2_name + "<br><span>" + translations[lang].exp_text + " 9 years</span>";
 
-document.getElementById("doc10").innerHTML =
-  translations[lang].doc10_name + "<br><span>" + translations[lang].exp_text + " 6 years</span>";
+  document.getElementById("doc3").innerHTML =
+    translations[lang].doc3_name + "<br><span>" + translations[lang].exp_text + " 10 years</span>";
 
-document.getElementById("doc7").innerHTML =
-  translations[lang].doc7_name + "<br><span>" + translations[lang].exp_text + " 13 years</span>";
+  document.getElementById("doc4").innerHTML =
+    translations[lang].doc4_name + "<br><span>" + translations[lang].exp_text + " 7 years</span>";
 
-document.getElementById("doc8").innerHTML =
-  translations[lang].doc8_name + "<br><span>" + translations[lang].exp_text + " 10 years</span>";
-    document.getElementById("appoint-btn").innerText =
-  translations[lang].appointBtn;
+  document.getElementById("doc7").innerHTML =
+    translations[lang].doc7_name + "<br><span>" + translations[lang].exp_text + " 13 years</span>";
 
-document.getElementById("news-title").innerText =
-  translations[lang].newsTitle;
+  document.getElementById("doc8").innerHTML =
+    translations[lang].doc8_name + "<br><span>" + translations[lang].exp_text + " 10 years</span>";
 
-document.getElementById("gallery-title").innerText =
-  translations[lang].galleryTitle;
+  document.getElementById("doc9").innerHTML =
+    translations[lang].doc9_name + "<br><span>" + translations[lang].exp_text + " 9 years</span>";
 
-document.getElementById("news1").innerText = translations[lang].news1;
-document.getElementById("news2").innerText = translations[lang].news2;
-document.getElementById("news3").innerText = translations[lang].news3;
-document.getElementById("news4").innerText = translations[lang].news4;
-document.getElementById("news5").innerText = translations[lang].news5;
-document.getElementById("news6").innerText = translations[lang].news6;
-document.getElementById("news7").innerText = translations[lang].news7;
-document.getElementById("news8").innerText = translations[lang].news8;
-    document.getElementById("services-desc").innerText = translations[lang].servicesDesc;
+  document.getElementById("doc10").innerHTML =
+    translations[lang].doc10_name + "<br><span>" + translations[lang].exp_text + " 6 years</span>";
 
-document.getElementById("serv-surgery").innerText = translations[lang].servSurgery;
-document.getElementById("serv-infect").innerText = translations[lang].servInfect;
-document.getElementById("serv-spec").innerText = translations[lang].servSpec;
-document.getElementById("serv-emergency").innerText = translations[lang].servEmergency;
-document.getElementById("serv-diagn").innerText = translations[lang].servDiagn;
-
-for(let i = 1; i <= 21; i++) {
-  document.getElementById("serv" + i).innerText =
-    translations[lang]["serv" + i];
-    document.getElementById("map-title").innerText =
-  translations[lang].mapTitle;
-
-document.getElementById("contacts-title").innerText =
-  translations[lang].contactsTitle;
-
-document.getElementById("schedule-title").innerText =
-  translations[lang].scheduleTitle;
-
-document.getElementById("reviews-title").innerText =
-  translations[lang].reviewsTitle;
-
-document.getElementById("schedule-text").innerHTML =
-  translations[lang].scheduleText.replace(/\n/g, "<br>");
-
-document.getElementById("reviews-text").innerText =
-  translations[lang].reviewsText;
-
-document.getElementById("copyright").innerText =
-  translations[lang].copyright;
+  // SERVICES (цикл ОТДЕЛЬНО и безопасно)
+ for (let i = 1; i <= 21; i++) {
+  const el = document.getElementById("serv" + i);
+  if (el && translations[lang]["serv" + i]) {
+    el.innerText = translations[lang]["serv" + i];
+  }
 }
-}
-        const fadeElements = document.querySelectorAll(".fade-in");
+  }
 
 document.addEventListener("DOMContentLoaded", () => {
+
     setTimeout(() => {
         const splash = document.getElementById("splash");
-        if (splash) {
-            splash.style.opacity = "0";
-            splash.style.transition = "0.5s";
-            setTimeout(() => {
-                splash.style.display = "none";
-            }, 500);
-        }
+
+        if (!splash) return;
+
+        splash.style.opacity = "0";
+
+        setTimeout(() => {
+            splash.style.display = "none";
+        }, 500);
+
     }, 1500);
+
 });
-    </script>
+</script>
 </body>
 </html>
