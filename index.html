@@ -7,6 +7,26 @@
     <title>Медицинский центр "Здоровье"</title>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <style>
+        .logo-img {
+    width: 110px;
+    height: 110px;
+    object-fit: contain;
+
+    opacity: 0;
+    transform: scale(0.5);
+    animation: logoIntro 1.2s ease-out forwards;
+}
+
+@keyframes logoIntro {
+    0% {
+        opacity: 0;
+        transform: scale(0.5) translateY(-20px);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+    }
+}
         /* кнопка */
 .burger {
     display: none;
