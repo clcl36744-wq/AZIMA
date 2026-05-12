@@ -768,7 +768,7 @@ margin-top: 30px;
       </button>
     </div>
   </div>
-<button class="burger" onclick="toggleMenu()">☰</button>
+<button class="burger">☰</button>
 
 <nav id="nav-menu" class="nav">
   <a href="#services">Услуги</a>
@@ -1411,6 +1411,14 @@ document.addEventListener("DOMContentLoaded", () => {
 
     }, 1500);
 
+});
+        document.addEventListener("DOMContentLoaded", () => {
+  const burger = document.querySelector(".burger");
+  const menu = document.getElementById("nav-menu");
+
+  burger.addEventListener("click", () => {
+    menu.classList.toggle("active");
+  });
 });
 </script>
 </body>
