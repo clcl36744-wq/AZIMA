@@ -652,12 +652,7 @@ margin-top: 30px;
     gap: 10px;
 }
 
-/* ЛОГО */
-/* .logo-img {
-    width: 110px;
-    height: 110px;
-    object-fit: contain;
-} */
+
 
 /* УБРАТЬ СМЕЩЕНИЕ H1 */
 .logo-title h1 {
@@ -734,23 +729,19 @@ margin-top: 30px;
     animation: splashAnim 2s ease forwards;
 }
         /* ню */
-        .nav {
+ .burger {
     display: none;
-    flex-direction: column;
-    position: absolute;
-    top: 80px;
-    left: 0;
-    width: 100%;
-    background: white;
-    z-index: 9999;
+    font-size: 30px;
+    background: none;
+    border: none;
+    cursor: pointer;
 }
 
-.nav.active {
-    display: flex;
-}
-
-.burger {
-    display: none;
+/* 📱 только на телефоне */
+@media (max-width: 768px) {
+    .burger {
+        display: block;
+    }
 }
     </style>
 </head>
